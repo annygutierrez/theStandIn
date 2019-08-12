@@ -6,6 +6,6 @@ This is my own version of The Stand In app from The Perfect Date by Netflix, cur
 
 ## Original version
 
-In The Perfect Date the app is build by the main character(Noah Centineo), here is the official trailer of the  movie:
+In The Perfect Date the app is build by the best friend of the main character(Noah Centineo), here is the official trailer of the  movie:
 
 [![videonoa](https://user-images.githubusercontent.com/32302890/56466645-e0147180-63d9-11e9-8685-45799b495c36.png)](https://www.youtube.com/watch?v=Hld-7oBn3Rk)
