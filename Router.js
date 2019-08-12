@@ -1,55 +1,52 @@
-import { createStackNavigator, createSwitchNavigator, createBottomTabNavigator } from 'react-navigation';
-import React from 'react';
-import HomeContainer from './src/containers/Home';
-import {
-  StyleSheet,
-  View,
-  Image,
-  TouchableOpacity,
-  Text,
-  ImageBackground
-} from 'react-native';
+import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
+import SignUpContainer from './containers/SignUp';
+import LogInContainer from './containers/LogIn';DateRequestContainer
+import HomeContainer from './containers/Home';
+import DateRequestContainer from './containers/DateRequest';
 
-export const createRootNavigator = (logIn = false) => {
-  const commonNavigationOptions = {
-    header: null
-  };
+export const createRootNavigator = (signUpUser = false) => {
 
-  const LogIn = createStackNavigator(
-    {
-      Home: {
-        screen: HomeContainer,
-        navigationOptions: () => ({
-          header: null
-        })
+  return createStackNavigator({
+    Home: {
+    //   screen: HomeContainer,
+    //   navigationOptions: () => ({
+    //     header: null
+    //   })
+    screen: SignUpContainer,
+      navigationOptions: {
+        header: null
       }
     },
-    {
-      navigationOptions: () => commonNavigationOptions
-    }
-  );
-
-  const LogOut = createStackNavigator(
-    {
-      Home: {
-        screen: HomeContainer,
-        navigationOptions: () => ({
-          header: null
-        })
+    Register: {
+      screen: SignUpContainer,
+      navigationOptions: {
+        header: null
       }
     },
-    {
-      navigationOptions: () => commonNavigationOptions
-    }
-  );
-
-  return createSwitchNavigator(
-    {
-      LogIn: { screen: LogIn },
-      LogOut: { screen: LogOut }
+    LogIn: {
+        screen: LogInContainer,
+        navigationOptions: {
+            header: null
+        }
     },
-    {
-      initialRouteName: logIn ? 'LogIn' : 'LogOut'
+    Home: {
+        screen: HomeContainer,
+        navigationOptions: {
+            headerStyle: {
+                height: 100
+            }
+        }
+    },
+    DateRequest: {
+        screen: DateRequestContainer,
+        navigationOptions: {
+            headerStyle: {
+                height: 100
+            }
+        }
     }
-  );
-};
+  },
+    {
+      initialRouteName: signUpUser ? 'Home' : 'Register'
+    });
+}

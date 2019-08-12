@@ -1,14 +1,11 @@
-import React, {Component} from 'react';
-import {ImageBackground, StyleSheet, Text, View, Image, Dimensions} from 'react-native';
+import React, { Component } from 'react';
+import { createAppContainer } from 'react-navigation';
+import { createRootNavigator } from './router';
+
+const AppContainer = createAppContainer(createRootNavigator());
 
 export default class App extends Component {
   render() {
-    return (
-      <ImageBackground imageStyle={{ resizeMode: 'cover' }} style={{ flex: 1 }} source={require('./src/assets/background.png')}>
-      </ImageBackground>
-    );
+    return <AppContainer />
   }
-}
-
-const styles = StyleSheet.create({
-});
+};
