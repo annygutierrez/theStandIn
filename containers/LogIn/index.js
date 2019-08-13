@@ -67,7 +67,7 @@ class LogInContainer extends Component {
           </View>
           {
           !this.state.hideElement ? <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')} style={{ flex: 2.5, backgroundColor: '#4c56b1', alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={{ color: '#fff', fontSize: 16 }}>Don’t have an account? <Text style={{ textDecorationLine: 'underline', textDecorationColor: '#fff' }}>Sign up.</Text></Text>
+            <Text style={{ color: '#fff', fontSize: 16 }}>Don’t have an account? <Text style={{ fontWeight: 'bold' }}>Sign up.</Text></Text>
           </TouchableOpacity> : null
           }
           </LinearGradient>
