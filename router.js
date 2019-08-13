@@ -7,7 +7,7 @@ import DateRequestContainer from './containers/DateRequest';
 export const createRootNavigator = (signUpUser = false) => {
 
   return createStackNavigator({
-    Home: {
+    SignUp: {
     //   screen: HomeContainer,
     //   navigationOptions: () => ({
     //     header: null
@@ -32,17 +32,13 @@ export const createRootNavigator = (signUpUser = false) => {
     Home: {
         screen: HomeContainer,
         navigationOptions: {
-            headerStyle: {
-                height: 100
-            }
+          header: null
         }
     },
     DateRequest: {
         screen: DateRequestContainer,
         navigationOptions: {
-            headerStyle: {
-                height: 100
-            }
+          header: null
         }
     }
   },
