@@ -33,7 +33,10 @@ class DateRequestContainer extends Component {
             numberOfLines={10}
             placeholder={'Describe your date'}
             placeholderTextColor={'#ababab'}
-            style={{ height: 100, textAlignVertical: 'top', backgroundColor: '#ededed', marginTop: 16, paddingHorizontal: 8, fontSize: 16 }} />
+            style={{ height: 110, textAlignVertical: 'top', backgroundColor: '#ededed', marginTop: 16, paddingHorizontal: 8, fontSize: 16 }}
+          />
+          <View style={{ height: 60, borderRadius: 27, backgroundColor: '#ededed', marginTop: 42 }}></View>
+          <View style={{ height: 60, borderRadius: 27, backgroundColor: '#ededed', marginTop: 18 }}></View>
         </View>
       </Fragment>
     );
