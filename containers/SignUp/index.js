@@ -10,6 +10,7 @@ import {
   Platform
 } from 'react-native';
 import ButtonComponent from '../../components/Button';
+import { StackActions, NavigationActions } from 'react-navigation';
 import LinearGradient from 'react-native-linear-gradient';
 import logo from '../../assets/images/main_logo.png';
 
@@ -39,6 +40,15 @@ class SignUpContainer extends Component {
 
   _keyboardDidHide() {
     this.setState({ hideElement: false });
+  }
+
+  startSession() {
+    const navigateAction = StackActions.reset({
+      index: 0,
+      actions: [NavigationActions.navigate({ routeName: "LoaderScreen" })],
+    });
+  
+    this.props.navigation.dispatch(navigateAction);
   }
 
   render () {
@@ -71,7 +81,7 @@ class SignUpContainer extends Component {
             placeholderTextColor={'#fff'}
             value={this.state.text}
           />
-          <ButtonComponent text={'Sign up'} action={() => this.props.navigation.navigate('Home')} />
+          <ButtonComponent text={'Sign up'} action={() => this.startSession()} />
         </View>
         {
         !this.state.hideElement ? <TouchableOpacity onPress={() => this.props.navigation.navigate('LogIn')} style={{ flex: 2.5, backgroundColor: '#4c56b1', alignItems: 'center', justifyContent: 'center' }}>

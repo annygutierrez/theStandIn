@@ -25,26 +25,7 @@ const { width } = Dimensions.get('window');
 class DateRequestContainer extends Component {
 
   state = {
-    isOn: false,
-    animatedValue: new Animated.Value(0),
     text: ''
-  }
-
-  toggleHandle() {
-    this.setState(
-      { isOn: !this.state.isOn },
-      () => {
-        Animated.timing(
-          this.state.animatedValue,
-          {
-            toValue: this.state.isOn ? (width - 60) / 2 : 0,
-            duration: 500,         // in milliseconds, default is 500
-            easing: Easing.bounce, // Easing function, default is Easing.inOut(Easing.ease)
-            delay: 0,              // in milliseconds, default is 0
-          }
-        ).start()
-      }
-    )
   }
 
 
@@ -71,12 +52,31 @@ class DateRequestContainer extends Component {
               placeholderTextColor={'#ababab'}
               style={{ height: 110, textAlignVertical: 'top', backgroundColor: '#ededed', marginTop: 16, paddingHorizontal: 8, fontSize: 16, marginBottom: 10 }}
             />
-            <SwitchSelector width={width - 60} height={54} firstOption={'FUNNY'} secondOption={'SERIOUS'} />
-            <SwitchSelector width={width - 60} height={54} firstOption={'TALKER'} secondOption={'LISTENER'} />
-            <SwitchSelector width={width - 60} height={54} firstOption={'OUTDOING'} secondOption={'CONSERVATIVE'} />
+            <SwitchSelector
+              width={width - 60}
+              height={54}
+              firstOption={'FUNNY'}
+              secondOption={'SERIOUS'}
+            />
+            <SwitchSelector
+              width={width - 60}
+              height={54}
+              firstOption={'TALKER'}
+              secondOption={'LISTENER'}
+            />
+            <SwitchSelector
+              width={width - 60}
+              height={54}
+              firstOption={'OUTDOING'}
+              secondOption={'CONSERVATIVE'}
+            />
           </ScrollView>
-          <LinearGradient colors={['rgba(255, 255, 255,0)', 'rgba(255, 255, 255, 0.3)', 'rgba(255, 255, 255, 0.6)', '#FFFFFF']} locations={[0.0, 0.10, 0.20, 0.39]} style={{ height: 120, width, justifyContent: 'flex-end', paddingHorizontal: 30, paddingBottom: BOTTOM_SPACE, position: 'absolute', bottom: 0 }}>
-            <TouchableOpacity style={{ backgroundColor: '#00B0C9', paddingVertical: 16, alignItems: 'center', justifyContent: 'center' }}>
+          <LinearGradient
+            colors={['rgba(255, 255, 255,0)', 'rgba(255, 255, 255, 0.3)', 'rgba(255, 255, 255, 0.6)', '#FFFFFF']}
+            locations={[0.0, 0.10, 0.20, 0.39]}
+            style={{ height: 120, width, justifyContent: 'flex-end', paddingHorizontal: 30, paddingBottom: BOTTOM_SPACE, position: 'absolute', bottom: 0 }}
+          >
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('SuccessCharge')} style={{ backgroundColor: '#00B0C9', paddingVertical: 16, alignItems: 'center', justifyContent: 'center', borderRadius: 27 }}>
               <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 20 }}>REQUEST DATE</Text>
             </TouchableOpacity>
           </LinearGradient>
