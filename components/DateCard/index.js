@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import {
     View,
     Image,
@@ -15,7 +15,7 @@ class DateCardComponent extends Component {
 
     render() {
         return (
-            <View style={{ paddingLeft: 15, paddingTop: 15, paddingBottom: 30 }}>
+            <View style={{ paddingLeft: 15, paddingTop: 15, paddingBottom: 30, marginLeft: 30, marginRight: 30 }}>
                 <View style={{ position: 'absolute', zIndex: 100, elevation: 6 }}>
                     <Image source={logo} style={{ width: 100, height: 100 }} />
                 </View>

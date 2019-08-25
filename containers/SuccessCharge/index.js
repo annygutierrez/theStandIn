@@ -6,6 +6,7 @@ import {
     Animated,
 } from 'react-native';
 import checked from '../../assets/images/checked.png';
+import { StackActions, NavigationActions } from 'react-navigation';
 import completeCharge from '../../assets/images/completeCharge.png';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -30,7 +31,7 @@ class SuccessChargeContainer extends Component {
             this.handlePressOut();
         }, 1000);
         setTimeout(() => {
-            this.props.navigation.navigate('Historial');
+            this.startSession();
         }, 1500);
     }
 
@@ -46,6 +47,15 @@ class SuccessChargeContainer extends Component {
             friction: 3,
             tension: 60
         }).start()
+    }
+
+    startSession() {
+        const navigateAction = StackActions.reset({
+          index: 0,
+          actions: [NavigationActions.navigate({ routeName: "Historial" })],
+        });
+      
+        this.props.navigation.dispatch(navigateAction);
     }
 
 

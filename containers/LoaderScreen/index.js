@@ -2,7 +2,9 @@ import React, { Component, Fragment } from 'react';
 import {
     SafeAreaView,
     Animated,
+    ActivityIndicator
 } from 'react-native';
+import { StackActions, NavigationActions } from 'react-navigation';
 import logo from '../../assets/images/logo_opacity.png';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -27,8 +29,17 @@ class LoaderScreenContainer extends Component {
             }
         ).start();
         setTimeout(() => {
-            this.props.navigation.navigate('Home');
+            this.startSession();
         }, 1900);
+    }
+
+    startSession() {
+        const navigateAction = StackActions.reset({
+          index: 0,
+          actions: [NavigationActions.navigate({ routeName: "Home" })],
+        });
+      
+        this.props.navigation.dispatch(navigateAction);
     }
 
 
@@ -43,10 +54,13 @@ class LoaderScreenContainer extends Component {
                         ocations={[0.0, 0.22, 0.28]}
                         style={{ backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center', flex: 1 }}
                     >
-                        <Animated.Image
+                        {/* <Animated.Image
                             style={{ width: 400, height: 400, transform: [{ scale: this.springValue }] }}
                             resizeMode={'contain'}
                             source={logo}
+                        /> */}
+                        <ActivityIndicator
+                          size="large" color="#000E91"
                         />
                     </LinearGradient>
                 </SafeAreaView >

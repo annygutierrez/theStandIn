@@ -31,12 +31,20 @@ class DrawerNavigationContainer extends Component {
                             <Image resizeMode={'contain'} source={textLogo} style={{ width: 181, height: 55 }} />
                         </View>
                         <View style={{ flex: 4, paddingTop: 50, paddingLeft: 60 }}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Historial')}>
                             <Text style={{ color: '#fff', fontSize: 30, lineHeight: 49, opacity: 0.5 }}>Historial</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('DateRequest')}>
                             <Text style={{ color: '#fff', fontSize: 30, lineHeight: 49, opacity: 0.5 }}>Request date</Text>
+                        </TouchableOpacity>
+                        {/* <TouchableOpacity onPress={() => this.props.navigation.navigate('DateRequest')}>
                             <Text style={{ color: '#fff', fontSize: 30, lineHeight: 49, opacity: 0.5 }}>Profile</Text>
+                        </TouchableOpacity> */}
                         </View>
                         <View style={{ flex: 2, paddingLeft: 60, justifyContent: 'center' }}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('SignUp')}>
                             <Text style={{ color: '#fff', fontSize: 30, opacity: 0.5 }}>Log out</Text>
+                        </TouchableOpacity>
                         </View>
                     </LinearGradient>
                 </SafeAreaView>

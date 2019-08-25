@@ -26,7 +26,7 @@ class HistorialContainer extends Component {
                     <HeaderComponent />
                 </SafeAreaView>
                 <View style={{ backgroundColor: '#e9e9e9', flex: 1, paddingTop: 22 }}>
-                    <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 120 }} style={{ flexGrow: 1, paddingLeft: 30, paddingRight: 30 }}>
+                    <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 120 }} style={{ flexGrow: 1 }}>
                         <DateCard />
                         <DateCard />
                         <DateCard />
